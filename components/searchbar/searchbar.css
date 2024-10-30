@@ -1,0 +1,27 @@
+.search-container {
+    max-width: 1000px;
+    height: auto;
+    margin-left: auto;
+    /* border: 1px white solid; */
+}
+
+#search-form {
+    /* border: 2px solid white; */
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20%;
+    padding: 10px 0;
+}
+
+#search-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+#search-input:focus {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}

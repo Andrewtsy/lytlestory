@@ -1,4 +1,4 @@
-const story_cells = document.querySelectorAll('.story-image')
+const story_cells = document.querySelectorAll('.story-image');
 
 story_cells.forEach((el) => {
     el.addEventListener('mouseenter', () => {

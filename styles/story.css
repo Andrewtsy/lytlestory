@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    position: relative;
+    color: white;
+    text-align: center;
+    font-size: 60px;
+}
+
+h2 {
+    position: relative;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 50px;
+    /* border: 1px white solid; */
+}
+
+nav .nav-bar {
+    list-style: none;
+    display: flex;
+}
+
+nav .nav-bar li {
+    margin-left: 20px;
+}
+
+nav .nav-bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav .nav-bar a:hover {
+    color: blueviolet;
+}
+
+.main-content {
+    padding: 20px;
+}
