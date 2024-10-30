@@ -58,3 +58,8 @@ nav .nav-bar a:hover {
 .main-content {
     padding: 20px;
 }
+
+p {
+    margin-bottom: 1em;
+    text-indent: 2em;
+}
