@@ -1,0 +1,10 @@
+services:
+  mysql:
+    image: mysql/mysql-server:5.7.24
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    ports:
+      - "3306:3306"
