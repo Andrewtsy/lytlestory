@@ -6,13 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import jakarta.persistence.EntityNotFoundException;
 
+import java.util.List;
+
 @Service
 public class StoryService {
 
     @Autowired
     private StoryRepository storyRepository;
 
-    public Iterable<Story> findAll() {
+    public List<Story> findAll() {
         return storyRepository.findAll();
     }
 
