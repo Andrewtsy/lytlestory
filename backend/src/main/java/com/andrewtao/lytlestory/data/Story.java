@@ -16,8 +16,8 @@ public class Story {
     private String genre;
     private String file_path;
 
-    // @Column(name = "created_at", nullable = false, updatable = false)
-    // private LocalDateTime createdAt;
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt;
 
     public Story() {
     }
@@ -29,10 +29,10 @@ public class Story {
         this.file_path = file_path;
     }
 
-    // @PrePersist
-    // protected void onCreate() {
-    // createdAt = LocalDateTime.now();
-    // }
+    @PrePersist
+    protected void onCreate() {
+        createdAt = LocalDateTime.now();
+    }
 
     public Long getId() {
         return id;
