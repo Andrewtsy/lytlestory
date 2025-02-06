@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS mydb;
+
+USE mydb;
+
+CREATE TABLE stories (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(256),
+    author VARCHAR(256),
+    genre VARCHAR(256),
+    file_path VARCHAR(256),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

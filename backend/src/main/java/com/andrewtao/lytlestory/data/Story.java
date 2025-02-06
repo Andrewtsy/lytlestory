@@ -3,6 +3,9 @@ package com.andrewtao.lytlestory.data;
 import jakarta.persistence.*;
 import jakarta.persistence.Id;
 import java.time.LocalDateTime;
+import java.nio.file.*;
+import java.io.IOException;
+import java.net.URL;
 
 @Entity
 @Table(name = "stories")
@@ -17,7 +20,10 @@ public class Story {
     private String file_path;
 
     @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime createdAt;
+    private LocalDateTime created_at;
+
+    private static final URL contentURL = Story.class.getClassLoader().getResource("static/uploads/text_contents");
+    private static final String contentFolder = Paths.get(contentURL.getPath()).toAbsolutePath().toString();
 
     public Story() {
     }
@@ -31,7 +37,7 @@ public class Story {
 
     @PrePersist
     protected void onCreate() {
-        createdAt = LocalDateTime.now();
+        created_at = LocalDateTime.now();
     }
 
     public Long getId() {
@@ -50,7 +56,20 @@ public class Story {
         return genre;
     }
 
-    public String getFilePath() {
+    private String getFilePath() {
         return file_path;
+    }
+
+    public String getContent() {
+        String file_name = getFilePath();
+        Path file_path = Paths.get(contentFolder, file_name);
+
+        try {
+            String content = Files.readString(file_path);
+            return content;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "Error Retreiving content";
+        }
     }
 }
