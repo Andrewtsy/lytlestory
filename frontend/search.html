@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        Lytlestory
+    </title>
+    <link rel="stylesheet" href="styles/page.css" />
+    <link rel="stylesheet" href="components/searchbar/searchbar.css" />
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="foryou.html">For You</a></li>
+            <li><a href="bookshelf.html">Bookshelf</a></li>
+        </ul>
+
+        <div class="search-container">
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+            </form>
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <h1>
+        LytleStory
+    </h1>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div id='search-results'></div>
+    </div>
+
+    <script src="scripts/search.js"></script>
+    <script src="scripts/page.js"></script>
+
+</body>

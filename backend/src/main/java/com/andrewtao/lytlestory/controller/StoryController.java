@@ -42,4 +42,9 @@ public class StoryController {
         storyService.deleteById(id);
     }
 
+    @GetMapping("/search")
+    public List<Story> search(@RequestParam String query) {
+        return storyService.searchByKeyword(query);
+    }
+
 }

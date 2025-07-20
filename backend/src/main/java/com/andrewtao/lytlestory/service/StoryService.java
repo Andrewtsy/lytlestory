@@ -30,4 +30,8 @@ public class StoryService {
         storyRepository.deleteById(id);
     }
 
+    public List<Story> searchByKeyword(String keyword) {
+        return storyRepository.findByTitleContainingIgnoreCase(keyword)
+                .orElseThrow(() -> new EntityNotFoundException("No stories found with keyword: " + keyword));
+    }
 }
