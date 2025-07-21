@@ -23,7 +23,26 @@ public class Story {
     private LocalDateTime created_at;
 
     private static final URL contentURL = Story.class.getClassLoader().getResource("static/uploads/text_contents");
-    private static final String contentFolder = Paths.get(contentURL.getPath()).toAbsolutePath().toString();
+    private static final String contentFolder;
+    static {
+        if (contentURL != null) {
+            contentFolder = Paths.get(contentURL.getPath()).toAbsolutePath().toString();
+        } else {
+            contentFolder = null;
+            System.err.println("Content unable to be found.");
+        }
+    }
+
+    private static final URL imageURL = Story.class.getClassLoader().getResource("static/uploads/images");
+    private static final String imageFolder;
+    static {
+        if (imageURL != null) {
+            imageFolder = Paths.get(imageURL.getPath()).toAbsolutePath().toString();
+        } else {
+            imageFolder = null;
+            System.err.println("Image unable to be found.");
+        }
+    }
 
     public Story() {
     }
@@ -56,7 +75,7 @@ public class Story {
         return genre;
     }
 
-    private String getFilePath() {
+    public String getFilePath() {
         return file_path;
     }
 
@@ -72,4 +91,12 @@ public class Story {
             return "Error Retreiving content";
         }
     }
+
+    // public String getImagePath() {
+    //     String file_name = getFilePath();
+    //     Path file_path = Paths.get(imageFolder, file_name);
+
+    //     return file_path.toUri().toString();
+    // }
+
 }

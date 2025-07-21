@@ -97,7 +97,7 @@ nav .nav-bar a:hover {
 }
 
 .story-image {
-    height: 80%;
+    height: 150px;
     background-size: cover;
     background-position: center;
     border-radius: 4px;

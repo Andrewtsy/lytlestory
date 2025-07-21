@@ -1,11 +1,12 @@
-base_url = "http://localhost:8080/api/story/";
+stories_url = "http://localhost:8080/api/story/";
+images_url = "http://localhost:8080/uploads/images/";
 
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const query = params.get('query');
     const resultsDiv = document.getElementById('search-results');
 
-    fetch(base_url + 'search?query=' + encodeURIComponent(query), {
+    fetch(stories_url + 'search?query=' + encodeURIComponent(query), {
                     method: 'GET'
     })
     .then(response => {
@@ -21,12 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             stories.forEach(story => {
                 const storyDiv = document.createElement('div');
+                console.log(`${images_url}${story.filePath}.jpg`);
                 storyDiv.innerHTML = `
-                    <div>
-                        <h3>${story.title}</h3>
-                        <p>Author: ${story.author}</p>
-                        <p>${story.content.substring(0, 100)}...</p>
-                        <a href="/story/${story.id}">Read more</a>
+                    <div class="story-item">
+                        <a href="/story/${story.title}">
+                            <div class="story-image" style="background-image: url('${images_url}${story.filePath}.jpg');">
+                            </div>
+                            <div class="story-title-box">
+                                <h3 class="story-title">${story.title}</h3>
+                            </div>
+                        </a>
                     </div>
                 `;
                 resultsDiv.appendChild(storyDiv);
