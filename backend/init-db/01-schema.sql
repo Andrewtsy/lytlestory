@@ -7,6 +7,6 @@ CREATE TABLE stories (
     title VARCHAR(256),
     author VARCHAR(256),
     genre VARCHAR(256),
-    file_path VARCHAR(256),
+    file_name VARCHAR(256),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

@@ -17,8 +17,6 @@ async function getStory() {
         const authorContent = story.author;
         const contentContent = story.content;
 
-        console.log("test");
-
         titleDiv.textContent = titleContent;
         authorDiv.textContent = authorContent;
         contentDiv.innerHTML = contentContent;

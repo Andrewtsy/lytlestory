@@ -17,7 +17,7 @@ public class Story {
     private String title;
     private String author;
     private String genre;
-    private String file_path;
+    private String file_name;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime created_at;
@@ -33,25 +33,14 @@ public class Story {
         }
     }
 
-    private static final URL imageURL = Story.class.getClassLoader().getResource("static/uploads/images");
-    private static final String imageFolder;
-    static {
-        if (imageURL != null) {
-            imageFolder = Paths.get(imageURL.getPath()).toAbsolutePath().toString();
-        } else {
-            imageFolder = null;
-            System.err.println("Image unable to be found.");
-        }
-    }
-
     public Story() {
     }
 
-    public Story(String title, String author, String genre, String file_path) {
+    public Story(String title, String author, String genre, String file_name) {
         this.title = title;
         this.author = author;
         this.genre = genre;
-        this.file_path = file_path;
+        this.file_name = file_name;
     }
 
     @PrePersist
@@ -75,12 +64,12 @@ public class Story {
         return genre;
     }
 
-    public String getFilePath() {
-        return file_path;
+    public String getFileName() {
+        return file_name;
     }
 
     public String getContent() {
-        String file_name = getFilePath();
+        String file_name = getFileName() + ".html";
         Path file_path = Paths.get(contentFolder, file_name);
 
         try {
@@ -88,15 +77,8 @@ public class Story {
             return content;
         } catch (IOException e) {
             e.printStackTrace();
-            return "Error Retreiving content";
+            return "Error Retrieving content";
         }
     }
-
-    // public String getImagePath() {
-    //     String file_name = getFilePath();
-    //     Path file_path = Paths.get(imageFolder, file_name);
-
-    //     return file_path.toUri().toString();
-    // }
 
 }

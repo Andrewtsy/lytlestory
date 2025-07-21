@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             stories.forEach(story => {
                 const storyDiv = document.createElement('div');
-                console.log(`${images_url}${story.filePath}.jpg`);
+                console.log(`${images_url}${story.fileName}.jpg`);
                 storyDiv.innerHTML = `
                     <div class="story-item">
-                        <a href="/story/${story.title}">
-                            <div class="story-image" style="background-image: url('${images_url}${story.filePath}.jpg');">
+                        <a href="/pages/${story.fileName}.html">
+                            <div class="story-image" style="background-image: url('${images_url}${story.fileName}.jpg');">
                             </div>
                             <div class="story-title-box">
                                 <h3 class="story-title">${story.title}</h3>

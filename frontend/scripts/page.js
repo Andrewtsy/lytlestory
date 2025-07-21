@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const query = searchInput.value.trim();
             if (!query) return;
 
-            window.location.href = 'search.html?query=' + encodeURIComponent(query);
+            window.location.href = '/search.html?query=' + encodeURIComponent(query);
         });
     }
 });
