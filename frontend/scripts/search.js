@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(`${images_url}${story.fileName}.jpg`);
                 storyDiv.innerHTML = `
                     <div class="story-item">
-                        <a href="/pages/${story.fileName}.html">
+                        <a href="/story.html?id=${story.id}">
                             <div class="story-image" style="background-image: url('${images_url}${story.fileName}.jpg');">
                             </div>
                             <div class="story-title-box">
