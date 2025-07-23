@@ -1,7 +1,7 @@
-package com.andrewtao.lytlestory.repository;
+package com.andrewtao.lytlestory.story;
 
-import com.andrewtao.lytlestory.data.Story;
 import org.springframework.data.jpa.repository.JpaRepository;
+
 import java.util.List;
 import java.util.Optional;
 

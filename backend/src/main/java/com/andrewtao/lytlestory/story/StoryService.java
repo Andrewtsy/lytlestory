@@ -1,7 +1,5 @@
-package com.andrewtao.lytlestory.service;
+package com.andrewtao.lytlestory.story;
 
-import com.andrewtao.lytlestory.data.Story;
-import com.andrewtao.lytlestory.repository.StoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import jakarta.persistence.EntityNotFoundException;

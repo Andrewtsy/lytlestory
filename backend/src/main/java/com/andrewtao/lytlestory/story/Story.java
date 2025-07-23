@@ -1,4 +1,4 @@
-package com.andrewtao.lytlestory.data;
+package com.andrewtao.lytlestory.story;
 
 import jakarta.persistence.*;
 import jakarta.persistence.Id;

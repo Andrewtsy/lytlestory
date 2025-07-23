@@ -1,7 +1,5 @@
-package com.andrewtao.lytlestory.controller;
+package com.andrewtao.lytlestory.story;
 
-import com.andrewtao.lytlestory.data.Story;
-import com.andrewtao.lytlestory.service.StoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
