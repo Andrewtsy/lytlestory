@@ -1,5 +1,3 @@
-console.log("JavaScript file loaded successfully!");
-
 async function getStory() {
     base_url = "http://localhost:8080/api/story/"
     try {

@@ -25,9 +25,9 @@ public class RecommenderController {
 
     @GetMapping("/recommend")
     public List<Metadata> recommendStories(
-        @RequestParam Long userId, 
+        @RequestParam Long query, 
         @RequestParam Integer numberOfStories
     ) {
-        return recommenderService.recommendStories(userId, numberOfStories);
+        return recommenderService.recommendStories(query, numberOfStories);
     }
 }

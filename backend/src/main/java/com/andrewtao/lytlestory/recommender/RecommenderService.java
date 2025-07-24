@@ -17,8 +17,8 @@ public class RecommenderService {
         this.storyRecommender = storyRecommender;
     }
 
-    public List<Metadata> recommendStories(Long userId, int numberOfRecommendations) {
-        return storyRecommender.recommendStories(userId, numberOfRecommendations);
+    public List<Metadata> recommendStories(Long query, int numberOfRecommendations) {
+        return storyRecommender.recommendStories(query, numberOfRecommendations);
     }
     
 }

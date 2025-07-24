@@ -10,8 +10,8 @@ public interface Recommender {
     /**
      * Recommends stories based on user preferences.
      * 
-     * @param userId The ID of the user for whom to recommend stories.
+     * @param query The query embedding to recommend stories.
      * @return A list of recommended story IDs.
      */
-    List<Metadata> recommendStories(Long userId, int numberOfRecommendations);
+    List<Metadata> recommendStories(Long query, int numberOfRecommendations);
 }
