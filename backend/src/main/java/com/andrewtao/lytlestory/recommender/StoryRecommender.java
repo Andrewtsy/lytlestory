@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class StoryRecommender {
 
     private final StoryService storyService;
-    
+
     @Autowired
     public StoryRecommender(StoryService storyService) {
         this.storyService = storyService;
@@ -22,23 +22,21 @@ public class StoryRecommender {
 
     // @Override
     public List<Metadata> recommendStories(Long query, int numberOfRecommendations) {
-        int k = 3;
+        int k = 10;
         Random random = new Random(query);
         List<Integer> recommendationIds = new java.util.ArrayList<>();
-        for (int i = 0; i < numberOfRecommendations; i++) {
-            recommendationIds.add(1 + random.nextInt(k));
+        for (int i = 1; i <= numberOfRecommendations; i++) {
+            recommendationIds.add(random.nextInt(1, k));
         }
         return recommendationIds.stream()
                 .map(id -> getMetadata(id))
                 .collect(java.util.stream.Collectors.toList());
     }
 
-
     private Metadata getMetadata(long storyId) {
         Story story = storyService.findById(String.valueOf(storyId));
         return new Metadata(story.getId(), story.getTitle(), story.getAuthor(),
-                            story.getGenre(), story.getFileName());
+                story.getGenre(), story.getFileName());
     }
 
-    
 }
