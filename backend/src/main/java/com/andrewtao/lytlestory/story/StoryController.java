@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/story")
@@ -20,7 +21,7 @@ public class StoryController {
     }
 
     @GetMapping("/{id}")
-    public Story findById(@PathVariable String id) {
+    public Story findById(@PathVariable UUID id) {
         return storyService.findById(id);
     }
 
@@ -36,7 +37,7 @@ public class StoryController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable String id) {
+    public void deleteById(@PathVariable UUID id) {
         storyService.deleteById(id);
     }
 

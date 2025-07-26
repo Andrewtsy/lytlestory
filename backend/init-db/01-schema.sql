@@ -1,9 +1,9 @@
-CREATE DATABASE IF NOT EXISTS mydb;
+CREATE DATABASE IF NOT EXISTS lytlestory;
 
-USE mydb;
+USE lytlestory;
 
 CREATE TABLE stories (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id BINARY(16) NOT NULL PRIMARY KEY,
     title VARCHAR(256),
     author VARCHAR(256),
     genre VARCHAR(256),

@@ -1,6 +1,6 @@
 base_url = "http://localhost:8080/api/recommender/recommend"
 user_id = 0;
-num_stories = 12;
+num_stories = 16;
 
 async function fillReelsPage() {
     const reelsDivs = document.getElementsByClassName('story-reel');
@@ -45,11 +45,11 @@ async function populateReels(reelsDiv, user_id, num_stories) {
 }
 
 function djb2Hash(str) {
-  let hash = 5381;
-  for (let i = 0; i < str.length; i++) {
-    hash = ((hash << 5) + hash) + str.charCodeAt(i);
-  }
-  return hash >>> 0;
+    let hash = 5381;
+    for (let i = 0; i < str.length; i++) {
+        hash = ((hash << 5) + hash) + str.charCodeAt(i);
+    }
+    return hash >>> 0;
 }
 
 

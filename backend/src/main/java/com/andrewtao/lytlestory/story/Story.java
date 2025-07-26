@@ -1,18 +1,24 @@
 package com.andrewtao.lytlestory.story;
 
 import jakarta.persistence.*;
-import jakarta.persistence.Id;
+
 import java.time.LocalDateTime;
 import java.nio.file.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.UUID;
+
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "stories")
 public class Story {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue
+    @Column(name = "id", columnDefinition = "BINARY(16)")
+    @JdbcTypeCode(SqlTypes.BINARY)
+    private UUID id;
 
     private String title;
     private String author;
@@ -48,7 +54,7 @@ public class Story {
         created_at = LocalDateTime.now();
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
