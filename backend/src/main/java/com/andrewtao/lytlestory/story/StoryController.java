@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/story")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class StoryController {
 
     @Autowired

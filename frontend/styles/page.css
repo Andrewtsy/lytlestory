@@ -70,6 +70,7 @@ nav .nav-bar a:hover {
     padding: 20px;
     background-color: black;
     white-space: nowrap;
+    box-sizing: border-box;
 }
 
 .story-scroll::-webkit-scrollbar {
@@ -89,6 +90,7 @@ nav .nav-bar a:hover {
     overflow-x: hidden;
     cursor: pointer;
     overflow-y: hidden;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .story-item a {
@@ -113,6 +115,20 @@ nav .nav-bar a:hover {
     text-wrap: wrap;
 }
 
-.scroll-item:hover .story-image {
-    transform: scale(1.5);
+.story-item:hover {
+    transform: scale(1.07);
+    z-index: 2;
+}
+
+.title {
+    color: inherit;
+    text-decoration: none;
+    font-weight: normal;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+a.title:hover {
+    color: blueviolet;
 }

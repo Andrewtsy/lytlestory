@@ -13,7 +13,7 @@ import com.andrewtao.lytlestory.story.Metadata;
 
 @RestController
 @RequestMapping("/api/recommender")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class RecommenderController {
 
     private RecommenderService recommenderService;
