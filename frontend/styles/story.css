@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+    line-height: 1.6;
+    /* background-color: #fdfcf8; */
+    /* color: #222; */
+}
+
 body {
     background-color: black;
     color: white;
@@ -14,6 +21,7 @@ h1 {
     color: white;
     text-align: center;
     font-size: 60px;
+    font-family: "Merriweather", serif;
 }
 
 h2 {
@@ -21,6 +29,7 @@ h2 {
     color: white;
     text-align: center;
     font-size: 30px;
+    font-family: "Merriweather", serif;
 }
 
 nav {
@@ -56,10 +65,44 @@ nav .nav-bar a:hover {
 }
 
 #main-content {
-    padding: 20px;
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.35rem;
 }
 
 p {
-    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-bottom: 2em;
     text-indent: 2em;
+    font-size: 1.35rem;
+    text-align: justify;
+    font-family: "Garamond", Garamond, "Times New Roman", Times, serif;
+}
+
+/* Reading container
+.reading-container {
+    max-width: 70ch; Ideal ~70 characters per line
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1rem, 5vw, 2rem);  Responsive padding
+    padding-right: clamp(1rem, 5vw, 2rem);
+    background-color: #fff; White page feel
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    min-height: 100vh; Fill screen height
+} */
+
+p:first-of-type {
+    line-height: 1.6;
+    text-indent: 0.2em;
+}
+
+p:first-of-type::first-letter {
+    float: left;
+    font-size: 3rem;
+    line-height: 0.4;
+    padding-right: 0rem;
+    font-family: "Georgia", serif;
 }
